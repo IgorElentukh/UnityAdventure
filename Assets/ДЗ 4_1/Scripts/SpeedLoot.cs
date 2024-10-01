@@ -14,10 +14,10 @@ public class SpeedLoot : Loot
 
     public override void Use(GameObject owner)
     {
-        PlayerController2 controller = owner.GetComponentInChildren<PlayerController2>();
+        Mover3 mover = owner.GetComponentInChildren<Mover3>();
 
-        if(controller != null)
-            controller.MoveSpeed += _value;
+        if (mover != null)
+            mover.MoveSpeed += _value;
 
         base.Use(owner);
     }

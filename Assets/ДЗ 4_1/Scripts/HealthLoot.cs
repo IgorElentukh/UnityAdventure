@@ -6,10 +6,10 @@ public class HealthLoot : Loot
 
     public override void Use(GameObject owner)
     {
-        PlayerController2 controller = owner.GetComponentInChildren<PlayerController2>();
+        Health health = owner.GetComponentInChildren<Health>();
 
-        if (controller != null)
-            controller.Health += _value;
+        if (health != null)
+            health.HealthValue += _value;
 
         base.Use(owner);
     }

@@ -16,7 +16,7 @@ using UnityEngine;
                 return;
 
             _mover.ProcessMoveTo(input);
-                _mover.ProcessRotateTo(input);
+            _mover.ProcessRotateTo(input);
         }
     }
 

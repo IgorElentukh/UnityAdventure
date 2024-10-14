@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3955993e7d1335418aabfcace03e7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyControllerPrefab: {fileID: -166312961733480363, guid: 5d0647133f6e7cd4ebe4b9de85d53b94,
+    type: 3}
+  _idleBehaviourSetting: 0
+  _reactionOnPlayerSetting: 0

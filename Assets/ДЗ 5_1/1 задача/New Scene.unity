@@ -240,8 +240,8 @@ GameObject:
   - component: {fileID: 883190921}
   - component: {fileID: 883190920}
   - component: {fileID: 883190919}
-  - component: {fileID: 883190922}
   - component: {fileID: 883190918}
+  - component: {fileID: 883190922}
   - component: {fileID: 883190917}
   m_Layer: 0
   m_Name: Cube (3)
@@ -372,7 +372,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 883190916}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cfe63287d82f6041888a739b075e824, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f08ac7d3b6627743b086011f812d26a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1135821436
@@ -386,8 +386,8 @@ GameObject:
   - component: {fileID: 1135821440}
   - component: {fileID: 1135821439}
   - component: {fileID: 1135821438}
-  - component: {fileID: 1135821442}
   - component: {fileID: 1135821437}
+  - component: {fileID: 1135821442}
   - component: {fileID: 1135821441}
   m_Layer: 0
   m_Name: Cube
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1135821436}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cfe63287d82f6041888a739b075e824, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f08ac7d3b6627743b086011f812d26a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1291878261
@@ -532,8 +532,8 @@ GameObject:
   - component: {fileID: 1291878266}
   - component: {fileID: 1291878265}
   - component: {fileID: 1291878264}
-  - component: {fileID: 1291878267}
   - component: {fileID: 1291878263}
+  - component: {fileID: 1291878267}
   - component: {fileID: 1291878262}
   m_Layer: 0
   m_Name: Cube (2)
@@ -664,7 +664,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1291878261}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cfe63287d82f6041888a739b075e824, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f08ac7d3b6627743b086011f812d26a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1303981055
@@ -983,8 +983,8 @@ GameObject:
   - component: {fileID: 1767071373}
   - component: {fileID: 1767071372}
   - component: {fileID: 1767071371}
-  - component: {fileID: 1767071374}
   - component: {fileID: 1767071370}
+  - component: {fileID: 1767071374}
   - component: {fileID: 1767071369}
   m_Layer: 0
   m_Name: Cube (1)
@@ -1115,7 +1115,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1767071368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cfe63287d82f6041888a739b075e824, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f08ac7d3b6627743b086011f812d26a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807

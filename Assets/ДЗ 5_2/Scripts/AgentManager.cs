@@ -7,27 +7,33 @@ using UnityEngine.AI;
 public class AgentManager : MonoBehaviour
 {
     public const int LeftMouseButton = 0;
-    
-    [SerializeField] private Player _player;
-    [SerializeField] private LayerMask _grounMask;
-    [SerializeField] private TargetPoint _targetPoint;
 
     private OnPointMover _mover;
+    private NavMeshAgent _agent;
     private Camera _mainCamera;
-    private TargetPoint _curretTargetPoint;
-    private float _stopDistance = 1f;
+    private LayerMask _groundMask;
 
-    private void Awake()
+    private TargetPoint _targetPointPrefab;
+    private TargetPoint _curretTargetPoint;
+
+    private bool _isInitialized;
+
+    public void Initialize(OnPointMover mover, NavMeshAgent agent, Camera mainCamera, LayerMask groundMask, TargetPoint targetPointPrefab)
     {
-        _mover = new OnPointMover(_player.Agent, _grounMask);
-        _mainCamera = Camera.main;
+        _mover = mover;
+        _agent = agent;
+        _mainCamera = mainCamera;
+        _groundMask = groundMask;
+        _targetPointPrefab = targetPointPrefab;
+        _isInitialized = true;
     }
 
     private void Update()
     {
-        MovePlayer();
-        StopPlayer();
+        if (_isInitialized == false) // Камера почему-то была null в методах CanMoveTo и MovePlayer
+            return;
 
+        MovePlayer();
     }
 
     private void PlaceTargetPoint(Vector3 point)
@@ -35,39 +41,34 @@ public class AgentManager : MonoBehaviour
         if (_curretTargetPoint != null)
             Destroy(_curretTargetPoint.gameObject);
 
-        //point.y = -0.2f;
+        point.y = -0.2f;
 
-        _curretTargetPoint = _targetPoint.PlacePoint(point, _player.Agent);
+        _curretTargetPoint = Instantiate(_targetPointPrefab, point, Quaternion.identity);
+        _curretTargetPoint.Initialize(_agent);
+    }
+
+    public bool CanMoveTo(Vector3 rayPoint)
+    {
+        Ray ray = _mainCamera.ScreenPointToRay(rayPoint);
+
+        return Physics.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity, _groundMask);
     }
 
     private void MovePlayer()
     {
-        if (Input.GetMouseButtonDown(LeftMouseButton))
+        if (Input.GetMouseButtonDown(LeftMouseButton) && CanMoveTo(Input.mousePosition))
         {
             Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity, _grounMask))
+            if (Physics.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity, _groundMask))
             {
-                if (_mover.CanMoveTo(hitInfo.point))
-                {
-                    _mover.MoveOn(hitInfo.point);
-                    _player.View.StartRunning();
-                    PlaceTargetPoint(hitInfo.point);
-                }
+                _mover.MoveOn(hitInfo.point);
+                PlaceTargetPoint(hitInfo.point);
+
             }
         }
     }
-
-    private void StopPlayer()
-    {
-        if(_curretTargetPoint != null)
-        {
-            float distanceToTarget = (_player.transform.position - _curretTargetPoint.transform.position).magnitude;
-
-            if(distanceToTarget <= _stopDistance)
-                _player.View.StopRunning();
-        }
-        
-
-    }
 }
+
+
+

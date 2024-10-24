@@ -23,7 +23,6 @@ public class HealthComponent
         if(CurrentHealth <= 0)
         {
             CurrentHealth = 0;
-            Debug.Log("Я умер");
         }
     }
 

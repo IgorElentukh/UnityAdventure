@@ -10,20 +10,20 @@ public class Mine : MonoBehaviour
 
     [SerializeField] private ParticleSystem _explosionEffect;
 
-    private bool _isPlayerInRange = false;
+    private bool _isDamageableInRange = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        Player player = other.GetComponent<Player>();
+        IDamageable damageable = other.GetComponent<IDamageable>();
 
-        if (player != null)
-            _isPlayerInRange = true;
+        if (damageable != null)
+            _isDamageableInRange = true;
 
     }
 
     private void Update()
     {   
-        if (_isPlayerInRange == false)
+        if (_isDamageableInRange == false)
             return;
 
         _timer -= Time.deltaTime;
@@ -40,21 +40,11 @@ public class Mine : MonoBehaviour
 
         foreach (Collider collider in colliders)
         {
-            Player player = collider.GetComponent<Player>();
+            IDamageable damageable = collider.GetComponent<IDamageable>();
 
-            if(player != null)
+            if(damageable != null)
             {
-                player.Health.TakeDamage(_damage);
-
-                if (player.Health.CurrentHealth <= HealthComponent.MaxHealth * Player.LimitForInjuredLayer)
-                    player.View.SwitchInjuredLayer();
-
-                if(player.Health.CurrentHealth <= 0)
-                    player.View.Die();
-                else
-                    player.View.GetHit();
-
-                Debug.Log(player.Health.CurrentHealth);
+                damageable.TakeDamage(_damage);
             }
         }
 

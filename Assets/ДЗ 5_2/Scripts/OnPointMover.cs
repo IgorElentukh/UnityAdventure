@@ -6,17 +6,12 @@ using UnityEngine.AI;
 public class OnPointMover
 {
     private NavMeshAgent _agent;
-    //private Camera _mainCamera;
-    //private LayerMask _interactableLayer;
+    private AnimationCurve _jumpCurve;
 
-    public OnPointMover(NavMeshAgent agent /*LayerMask interactableLayer*/)
+    public OnPointMover(NavMeshAgent agent)
     {
         _agent = agent;
-        //_interactableLayer = interactableLayer;
-        //_mainCamera = Camera.main;
     }
-
-    
 
     public void MoveOn(Vector3 targetPoint)
     {

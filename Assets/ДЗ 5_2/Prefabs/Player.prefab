@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2330118390666062275}
   - component: {fileID: 4489701650649353388}
   - component: {fileID: 3730583753503918818}
+  - component: {fileID: 8142328804896451339}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -120,6 +121,52 @@ CapsuleCollider:
   m_Height: 1.6294689
   m_Direction: 1
   m_Center: {x: 0, y: 0.76695585, z: -0.00022090971}
+--- !u!114 &8142328804896451339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6909473574698376798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35fe572da633331498a4e9dccc4360a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jumpCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 11.039587
+      outSlope: 11.039587
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.019977804
+    - serializedVersion: 3
+      time: 0.5
+      value: 3
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -9.595929
+      outSlope: -9.595929
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.022197604
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _jumpTime: 1.5
 --- !u!1001 &6606349112066206907
 PrefabInstance:
   m_ObjectHideFlags: 0

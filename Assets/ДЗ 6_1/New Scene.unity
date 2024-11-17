@@ -334,11 +334,11 @@ MonoBehaviour:
   _spawnCooldown: 5
   _gameManager: {fileID: 3527760626992633249, guid: c48a073f463c2344f96ccb689619f936,
     type: 3}
-  _winCondition: 1
-  _lostCondition: 0
-  _timeToWin: 30
-  _enemiesToKill: 2
-  _enemiesToLoose: 2
+  _winCondition: 0
+  _lostCondition: 1
+  _timeToWin: 20
+  _enemiesToKill: 3
+  _enemiesToLoose: 5
 --- !u!4 &197395260
 Transform:
   m_ObjectHideFlags: 0

@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 3250294482746497586}
   - component: {fileID: 6340708651363317440}
   - component: {fileID: 8341207990020177401}
-  - component: {fileID: 636865260420618744}
+  - component: {fileID: 8465558663822200345}
   m_Layer: 5
   m_Name: SliderUI
   m_TagString: Untagged
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &636865260420618744
+--- !u!114 &8465558663822200345
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5683317612941409222}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aea11bbf4d9f6b74588a124d2c2931b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 9bff1a8d048f5a34bb2703edb6a78ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 636784390972520632}

@@ -5,17 +5,16 @@ using UnityEngine;
 
 namespace Timer
 {
-    public class CountdownTimer
+    public class CountdownTimerO
     {
-        public event Action<float> Started;
         public event Action Finished;
-        public event Action<float> Updated;
+        public event Action<float> Started;
 
         private float _remainingTime;
         private MonoBehaviour _context;
         private Coroutine _timerCoroutine;
 
-        public CountdownTimer(MonoBehaviour context)
+        public CountdownTimerO(MonoBehaviour context)
         {
             _context = context;
         }
@@ -24,6 +23,8 @@ namespace Timer
 
         public void StartTimer(float duration)
         {
+            StopTimer();
+
             _remainingTime = duration;
             _timerCoroutine = _context.StartCoroutine(TimerCoroutine());
             IsRunning = true;
@@ -44,7 +45,7 @@ namespace Timer
 
         public void ContinueTimer()
         {
-            if (_remainingTime <= 0 || IsRunning)
+            if (_remainingTime <= 0 && IsRunning)
                 return;
 
             _timerCoroutine = _context.StartCoroutine(TimerCoroutine());
@@ -60,20 +61,20 @@ namespace Timer
             Finished?.Invoke();
         }
 
-        public float GetRemainingTime() => _remainingTime;
+        public float GetRemainingTime() => Mathf.Max(_remainingTime, 0f);
 
         private IEnumerator TimerCoroutine()
         {
             while (_remainingTime > 0)
             {
                 _remainingTime -= Time.deltaTime;
-                Updated?.Invoke(_remainingTime);
                 yield return null;
             }
 
             Finished?.Invoke();
+
             ResetTimer();
         }
-    
+
     }
 }

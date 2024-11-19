@@ -342,7 +342,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1797268242}
-  - component: {fileID: 1797268241}
+  - component: {fileID: 1797268243}
   m_Layer: 0
   m_Name: Bootstrap
   m_TagString: Untagged
@@ -350,19 +350,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1797268241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797268240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ba0f535958afa44fb1108ab8053aa58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slider: {fileID: 636865260420618744, guid: d47256fe79b3d4c4ab000673d0b21fc4, type: 3}
 --- !u!4 &1797268242
 Transform:
   m_ObjectHideFlags: 0
@@ -378,6 +365,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1797268243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797268240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 785a9c440575ce144a190730319102c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 8465558663822200345, guid: d47256fe79b3d4c4ab000673d0b21fc4, type: 3}
+  _hearts: {fileID: 4178309286706671481, guid: 97a92c4f55e7221469d1afcfa7e9a152, type: 3}
 --- !u!1 &1846587614
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,16 +4,16 @@ using UnityEngine;
 
 namespace Timer
 {
-    public class Bootstrap : MonoBehaviour
+    public class BootstrapO : MonoBehaviour
     {
-        [SerializeField] private SliderTimerDisplay _slider;
-        [SerializeField] private HeartTimerDisplay _hearts;
+        [SerializeField] private SliderTimerO _slider;
+        [SerializeField] private HeartsTimerO _hearts;
 
-        private CountdownTimer _timer;
+        private CountdownTimerO _timer;
 
         private void Awake()
         {
-            _timer = new CountdownTimer(this);
+            _timer = new CountdownTimerO(this);
 
             _slider = Instantiate(_slider);
             _slider.Initialize(_timer);
@@ -26,11 +26,11 @@ namespace Timer
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.S))
+            if(Input.GetKeyDown(KeyCode.Space))
                 _timer.StopTimer();
-            else if (Input.GetKeyDown(KeyCode.D))
+            else if(Input.GetKeyDown(KeyCode.C))
                 _timer.ContinueTimer();
-            else if (Input.GetKeyDown(KeyCode.A))
+            else if(Input.GetKeyDown(KeyCode.R))
                 _timer.ResetTimer();
         }
     }

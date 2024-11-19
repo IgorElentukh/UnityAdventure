@@ -6,13 +6,13 @@ using UnityEngine.UI;
 
 namespace Timer
 {
-    public class SliderTimer : MonoBehaviour
+    public class SliderTimerO : MonoBehaviour
     {
         [SerializeField] private Slider _slider;
 
-        private CountdownTimer _timer;
+        private CountdownTimerO _timer;
 
-        public void Initialize(CountdownTimer timer)
+        public void Initialize(CountdownTimerO timer)
         {
             _timer = timer;
 

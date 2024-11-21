@@ -1,28 +1,31 @@
 using UnityEngine;
 
-public class LootHandler
+namespace Inventory2
 {
-    private Inventory _inventory;
-    private GameObject _owner;
-
-    public LootHandler(Inventory inventory, GameObject owner)
+    public class LootHandler
     {
-        _inventory = inventory;
-        _owner = owner;
-    }
+        private Inventory _inventory;
+        private GameObject _owner;
 
-    public bool CanUseLoot() => _inventory.HasLoot();
-
-    public void UseLoot()
-    {
-        if(CanUseLoot() == false)
+        public LootHandler(Inventory inventory, GameObject owner)
         {
-            Debug.LogError("Не могу использовать");
-            return;
+            _inventory = inventory;
+            _owner = owner;
         }
 
-        Loot loot = _inventory.GetLoot();
-        loot.Use(_owner);
-        Object.Destroy(loot.gameObject);
+        public bool CanUseLoot() => _inventory.HasLoot();
+
+        public void UseLoot()
+        {
+            if (CanUseLoot() == false)
+            {
+                Debug.LogError("Не могу использовать");
+                return;
+            }
+
+            Loot loot = _inventory.GetLoot();
+            loot.Use(_owner);
+            Object.Destroy(loot.gameObject);
+        }
     }
 }

@@ -1,24 +1,27 @@
 using UnityEngine;
 
-public class Character : MonoBehaviour
+namespace Inventory2
 {
-    [SerializeField] private Transform _lootHolderPoint; 
-    [SerializeField] private LootCollector _collector;
-
-    private LootHandler _lootHandler;
-
-    private void Awake()
+    public class Character : MonoBehaviour
     {
-        Inventory inventory = new Inventory(_lootHolderPoint);
+        [SerializeField] private Transform _lootHolderPoint;
+        [SerializeField] private LootCollector _collector;
 
-        _collector.Initialize(inventory);
-        _lootHandler = new LootHandler(inventory, gameObject);
-    }
+        private LootHandler _lootHandler;
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.F))
-            if (_lootHandler.CanUseLoot())
-                _lootHandler.UseLoot();
+        private void Awake()
+        {
+            Inventory inventory = new Inventory(_lootHolderPoint);
+
+            _collector.Initialize(inventory);
+            _lootHandler = new LootHandler(inventory, gameObject);
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+                if (_lootHandler.CanUseLoot())
+                    _lootHandler.UseLoot();
+        }
     }
 }
